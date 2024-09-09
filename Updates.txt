@@ -64,5 +64,33 @@ This MVP implements a simple document vault with a time-based messaging system. 
 - Handling potential abuse of the reset link
 - Implementing proper error handling for email sending failures
 
+
+## Document Vault with Time-Based Messaging MVP - Update 2
+
+### New Features and Changes
+1. Added a root route ('/') to display a simple homepage
+2. Included links to test the reset functionality and add documents
+
+### Implementation Details
+- Created a new Flask route for the root URL ('/')
+- Used `render_template_string` to display a simple HTML homepage
+- Added links to test the reset functionality and add documents (note: adding documents requires a POST request)
+
+### Next Steps
+1. Implement persistent storage for documents (e.g., database integration)
+2. Add user authentication and authorization
+3. Improve error handling and logging
+4. Implement more robust scheduling for the countdown check (e.g., using Celery)
+5. Enhance the user interface for document management and system configuration
+6. Implement security measures (e.g., encryption for stored documents)
+7. Add unit and integration tests
+8. Set up continuous integration and deployment (CI/CD) pipeline
+
+### Challenges and Considerations
+- Ensuring the security of the reset link in emails
+- Handling potential abuse of the reset link
+- Implementing proper error handling for email sending failures
+- Developing a more user-friendly interface for document management
+
 Author: Adam Vials Moore
 License: Apache 2.0

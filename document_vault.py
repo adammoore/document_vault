@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask import Flask, request, jsonify, redirect
+from flask import Flask, request, jsonify, redirect, render_template_string
 import uuid
 
 app = Flask(__name__)
@@ -76,6 +76,31 @@ class DocumentVault:
             server.sendmail(sender_email, receiver_email, message.as_string())
 
 vault = DocumentVault()
+
+
+@app.route('/')
+def home():
+    """Root route to display a simple homepage."""
+    homepage = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document Vault</title>
+    </head>
+    <body>
+        <h1>Welcome to Document Vault</h1>
+        <p>This is a secure document storage system with time-based messaging functionality.</p>
+        <ul>
+            <li><a href="/reset/test">Test Reset Link</a></li>
+            <li><a href="/document">Add Document (POST request required)</a></li>
+        </ul>
+    </body>
+    </html>
+    """
+    return render_template_string(homepage)
+
 
 @app.route('/reset/<token>', methods=['GET'])
 def reset_timer(token):
