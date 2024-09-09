@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ce151bc8-dd47-4d49-8878-23031ca9747f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,8 +31,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main"
+  },
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
+    ]
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -41,6 +59,19 @@
       <option name="presentableId" value="Default" />
       <updated>1725896043447</updated>
     </task>
+    <task id="LOCAL-00001" summary="Implement MVP for Document Vault with time-based messaging&#10;&#10;- Create DocumentVault class with core functionality&#10;- Implement Flask web server for API endpoints&#10;- Add countdown timer and message sending logic&#10;- Create Updates.txt with implementation details and next steps&quot;">
+      <option name="closed" value="true" />
+      <created>1725896700626</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725896700626</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implement MVP for Document Vault with time-based messaging&#10;&#10;- Create DocumentVault class with core functionality&#10;- Implement Flask web server for API endpoints&#10;- Add countdown timer and message sending logic&#10;- Create Updates.txt with implementation details and next steps&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement MVP for Document Vault with time-based messaging&#10;&#10;- Create DocumentVault class with core functionality&#10;- Implement Flask web server for API endpoints&#10;- Add countdown timer and message sending logic&#10;- Create Updates.txt with implementation details and next steps&quot;" />
   </component>
 </project>
