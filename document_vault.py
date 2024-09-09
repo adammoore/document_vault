@@ -1,10 +1,22 @@
+"""
+Document Vault with Time-Based Messaging
+
+This script implements a document vault system with a time-based messaging feature.
+It includes functionality to store documents, reset a countdown timer via email link,
+and send notifications if the timer expires.
+
+Author: Adam Vials Moore
+License: Apache 2.0
+"""
+
 import os
 import time
 from datetime import datetime, timedelta
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect
+import uuid
 
 app = Flask(__name__)
 
@@ -14,6 +26,7 @@ class DocumentVault:
         self.last_alive_signal = datetime.now()
         self.countdown_duration = countdown_duration
         self.message_sent = False
+        self.reset_token = str(uuid.uuid4())
 
     def add_document(self, doc_id, content):
         """Add a document to the vault."""
@@ -24,9 +37,10 @@ class DocumentVault:
         return self.documents.get(doc_id)
 
     def reset_countdown(self):
-        """Reset the countdown timer."""
+        """Reset the countdown timer and generate a new reset token."""
         self.last_alive_signal = datetime.now()
         self.message_sent = False
+        self.reset_token = str(uuid.uuid4())
 
     def check_and_send_message(self):
         """Check if it's time to send the message and send if necessary."""
@@ -35,13 +49,18 @@ class DocumentVault:
             self.message_sent = True
 
     def send_message(self):
-        """Send the message with document information."""
+        """Send the message with document information and reset link."""
         subject = "Document Vault: No Activity Alert"
-        body = "No 'I'm alive' signal received in the specified time. Here are the stored documents:\n\n"
+        reset_link = f"http://yourdomain.com/reset/{self.reset_token}"
+        body = f"No 'I'm alive' signal received in the specified time. Click here to reset: {reset_link}\n\n"
+        body += "Here are the stored documents:\n\n"
         for doc_id, content in self.documents.items():
             body += f"Document ID: {doc_id}\nContent: {content}\n\n"
 
-        # Email sending logic (replace with your SMTP settings)
+        self.send_email(subject, body)
+
+    def send_email(self, subject, body):
+        """Send an email with the given subject and body."""
         sender_email = "your_email@example.com"
         receiver_email = "receiver@example.com"
         password = "your_password"
@@ -58,11 +77,13 @@ class DocumentVault:
 
 vault = DocumentVault()
 
-@app.route('/alive', methods=['GET'])
-def alive_signal():
-    """Endpoint to receive the 'I'm alive' signal."""
-    vault.reset_countdown()
-    return jsonify({"status": "Countdown reset successfully"}), 200
+@app.route('/reset/<token>', methods=['GET'])
+def reset_timer(token):
+    """Endpoint to reset the timer via email link."""
+    if token == vault.reset_token:
+        vault.reset_countdown()
+        return "Timer reset successfully", 200
+    return "Invalid reset token", 400
 
 @app.route('/document', methods=['POST'])
 def add_document():

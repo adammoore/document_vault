@@ -18,8 +18,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Adam Vials Moore &lt;moore.adam@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "adammoore"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/adammoore/document_vault.git",
+    "accountId": "12b73301-336e-477c-a62f-487aa54b1a14"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
 }]]></component>
@@ -67,11 +84,31 @@
       <option name="project" value="LOCAL" />
       <updated>1725896700626</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update requirements.txt">
+      <option name="closed" value="true" />
+      <created>1725896958460</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725896958460</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update requirements.txt">
+      <option name="closed" value="true" />
+      <created>1725896961439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725896961439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement MVP for Document Vault with time-based messaging&#10;&#10;- Create DocumentVault class with core functionality&#10;- Implement Flask web server for API endpoints&#10;- Add countdown timer and message sending logic&#10;- Create Updates.txt with implementation details and next steps&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement MVP for Document Vault with time-based messaging&#10;&#10;- Create DocumentVault class with core functionality&#10;- Implement Flask web server for API endpoints&#10;- Add countdown timer and message sending logic&#10;- Create Updates.txt with implementation details and next steps&quot;" />
+    <MESSAGE value="Update requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update requirements.txt" />
   </component>
 </project>

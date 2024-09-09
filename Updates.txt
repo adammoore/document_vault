@@ -34,3 +34,35 @@ This MVP implements a simple document vault with a time-based messaging system. 
 - Handling potential network issues when sending emails
 - Scaling the solution for larger numbers of documents and users
 - Ensuring data privacy and security compliance (GDPR, etc.)
+
+
+## Document Vault with Time-Based Messaging MVP - Update 1
+
+### New Features and Changes
+1. Implemented email link functionality for resetting the countdown timer
+2. Created a setup script for initializing the project structure
+3. Added instructions for setting up the GitHub project
+
+### Implementation Details
+- Modified the `DocumentVault` class to include a reset token
+- Added a new Flask route `/reset/<token>` to handle timer resets via email link
+- Updated the `send_message` method to include the reset link in the email
+- Created a shell script `setup_project.sh` to set up the project structure
+
+### Next Steps
+1. Implement persistent storage for documents (e.g., database integration)
+2. Add user authentication and authorization
+3. Improve error handling and logging
+4. Implement more robust scheduling for the countdown check (e.g., using Celery)
+5. Add a user interface for document management and system configuration
+6. Enhance security measures (e.g., encryption for stored documents)
+7. Implement unit and integration tests
+8. Set up continuous integration and deployment (CI/CD) pipeline
+
+### Challenges and Considerations
+- Ensuring the security of the reset link in emails
+- Handling potential abuse of the reset link
+- Implementing proper error handling for email sending failures
+
+Author: Adam Vials Moore
+License: Apache 2.0
