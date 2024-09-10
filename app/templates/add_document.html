@@ -24,10 +24,11 @@
             <label for="scheduled_send">Scheduled Send Date</label>
             <input type="datetime-local" class="form-control" id="scheduled_send" name="scheduled_send">
         </div>
-        <div class="form-group">
-            <label for="file">File</label>
-            <input type="file" class="form-control-file" id="file" name="file">
-        </div>
-        <button type="submit" class="btn btn-primary">Add Document</button>
-    </form>
+            <div class="form-group">
+        <label for="file">File</label>
+        <input type="file" class="form-control-file" id="file" name="file">
+        <small class="form-text text-muted">Accepted file types: .txt, .pdf, .png, .jpg, .jpeg, .gif</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Document</button>
+</form>
 {% endblock %}

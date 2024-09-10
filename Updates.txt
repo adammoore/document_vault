@@ -262,6 +262,41 @@ Document Vault Project Updates
    - If any tests are still failing, investigate and fix each failing test individually.
    - Once all tests are passing, proceed with further development and refinement of the Document Vault features.
 
+Document Vault Project Updates
+
+1. Fixed document list display:
+   - Updated documents.py route to eager load recipient information.
+   - Modified documents.html template to correctly display recipient names.
+
+2. Improved UI for file uploads:
+   - Added information about acceptable file types to add_document.html and edit_document.html.
+   - Improved form layout and added helpful text for users.
+
+3. Fixed pytest errors:
+   - Updated db_session fixture in tests/conftest.py to use scoped_session and sessionmaker.
+
+4. Next steps:
+   - Run the tests again to verify that all issues have been resolved.
+   - If any tests are still failing, investigate and fix each failing test individually.
+   - Once all tests are passing, proceed with further development and refinement of the Document Vault features.
+   - Consider adding more user-friendly elements to the UI, such as tooltips or help text for various functions.
+   - Implement client-side validation for file uploads to provide immediate feedback on acceptable file types.
+
+Document Vault Project Updates
+
+1. Fixed Document model:
+   - Added 'recipient' relationship to the Document model in app/models.py.
+
+2. Updated test configuration:
+   - Modified tests/conftest.py to correctly handle the app fixture and AuthActions.
+   - Ensured that app_context is properly used in tests.
+
+3. Next steps:
+   - Run database migrations to apply the Document model changes.
+   - Run the tests again to verify that all issues have been resolved.
+   - If any tests are still failing, investigate and fix each failing test individually.
+   - Once all tests are passing, proceed with further development and refinement of the Document Vault features.
+
 Author: Adam Vials Moore
 Last Updated: September 10, 2024
 License: Apache 2.0

@@ -20,13 +20,11 @@
                 {% endfor %}
             </select>
         </div>
-        <div class="form-group">
-            <label for="file">File</label>
-            <input type="file" class="form-control-file" id="file" name="file">
-            {% if document.file_path %}
-                <p>Current file: {{ document.file_path }}</p>
-            {% endif %}
-        </div>
-        <button type="submit" class="btn btn-primary">Update Document</button>
-    </form>
+    <div class="form-group">
+        <label for="file">File</label>
+        <input type="file" class="form-control-file" id="file" name="file">
+        <small class="form-text text-muted">Accepted file types: .txt, .pdf, .png, .jpg, .jpeg, .gif</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Document</button>
+</form>
 {% endblock %}
