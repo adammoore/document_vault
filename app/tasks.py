@@ -26,7 +26,27 @@ def check_document_expiry():
         ).all()
 
         for document in expired_documents:
-            # TODO: Implement actual notification logic
-            print(f"Document {document.id} has expired. Notification should be sent.")
+            subject = f"Document Expiry Notification: {document.title}"
+            body = f"""
+            Dear User,
+
+            The following document has expired:
+
+            Title: {document.title}
+            Last Updated: {document.updated_at}
+
+            Please review and update this document if necessary.
+
+            Best regards,
+            Document Vault Team
+            """
+
+            recipient_email = document.recipient.email if document.recipient else config.smtp_username
+
+            success = send_email(config, recipient_email, subject, body)
+            if success:
+                app.logger.info(f"Notification sent for document {document.id}")
+            else:
+                app.logger.error(f"Failed to send notification for document {document.id}")
 
         return f"Checked {len(expired_documents)} expired documents."

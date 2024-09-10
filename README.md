@@ -60,8 +60,7 @@ document_vault/
 ├── .env
 ├── .gitignore
 ├── run_celery.sh
-├── README.md
-└── Updates.txt
+└── README.md
 ```
 
 ## Setup
@@ -83,7 +82,18 @@ document_vault/
    pip install -r requirements.txt
    ```
 
-4. Set up the `.env` file with your configuration (see `.env.example` for required variables).
+4. Set up environment variables in a `.env` file:
+   ```
+   SECRET_KEY=your_secret_key
+   DATABASE_URL=sqlite:///app.db
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   SMTP_SERVER=smtp.your-email-provider.com
+   SMTP_PORT=587
+   SMTP_USERNAME=your_email@example.com
+   SMTP_PASSWORD=your_email_password
+   UPLOAD_FOLDER=/path/to/upload/folder
+   ```
 
 5. Initialize the database:
    ```
@@ -102,17 +112,36 @@ document_vault/
    ./run_celery.sh
    ```
 
+## Usage
+
+1. Navigate to `http://localhost:5000` in your web browser.
+2. Log in using your Google account.
+3. Use the navigation menu to access different features:
+   - Manage Documents: Upload, view, edit, or delete documents
+   - Manage Recipients: Add, edit, or delete recipients
+   - Configure Settings: Set up SMTP and other parameters
+
 ## Testing
 
 To run the tests:
 ```
-flask test
+pytest
 ```
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## License
 
-This project is licensed under the Apache 2.0 License.
+This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Author
+## Authors
 
-Adam Vials Moore
+* **Adam Vials Moore** - *Initial work*
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc

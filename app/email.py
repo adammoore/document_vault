@@ -51,3 +51,43 @@ def send_reset_email(user, token):
     except Exception as e:
         current_app.logger.error(f"Failed to send email: {str(e)}")
         return False
+
+
+def send_email(config, to_email, subject, body):
+    """
+    Send an email using the provided configuration.
+
+    :param config: The application configuration containing SMTP settings
+    :param to_email: The recipient's email address
+    :param subject: The subject of the email
+    :param body: The body content of the email
+    :return: Boolean indicating whether the email was sent successfully
+    """
+    msg = MIMEMultipart()
+    msg['From'] = config.smtp_username
+    msg['To'] = to_email
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
+
+    try:
+        with smtplib.SMTP(config.smtp_server, config.smtp_port) as server:
+            server.starttls()
+            server.login(config.smtp_username, config.smtp_password)
+            server.send_message(msg)
+        return True
+    except Exception as e:
+        current_app.logger.error(f"Failed to send email: {str(e)}")
+        return False
+
+
+def send_test_email(config):
+    """
+    Send a test email using the provided configuration.
+
+    :param config: The application configuration containing SMTP settings
+    :return: Boolean indicating whether the test email was sent successfully
+    """
+    subject = "Test Email from Document Vault"
+    body = "This is a test email from your Document Vault application. If you received this, your SMTP configuration is working correctly."
+
+    return send_email(config, config.smtp_username, subject, body)

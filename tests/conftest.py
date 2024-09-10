@@ -8,29 +8,21 @@ License: Apache 2.0
 """
 
 import pytest
-from app import create_app, db, scheduler
+from app import create_app, db, init_scheduler
 from app.models import User
 from config import TestConfig
-from unittest.mock import Mock
 
-class MockOAuthClient:
-    def prepare_request_uri(self, *args, **kwargs):
-        return "http://mock-auth-url"
-
-@pytest.fixture
+@pytest.fixture(scope='session')
 def app():
-    """Create and configure a new app instance for each test."""
+    """Create and configure a new app instance for each test session."""
     app = create_app(TestConfig)
-    app.oauth_client = MockOAuthClient()  # Use mock OAuth client for tests
 
     with app.app_context():
         db.create_all()
+        init_scheduler(app)
         yield app
         db.session.remove()
         db.drop_all()
-
-    # Stop the scheduler after tests
-    scheduler.shutdown()
 
 @pytest.fixture
 def client(app):
@@ -53,7 +45,7 @@ class AuthActions:
         user = User(email=email, name=name)
         db.session.add(user)
         db.session.commit()
-        return self._client.get('/login')
+        return self._client.get('/login')  # This needs to be adjusted for Google OAuth
 
     def logout(self):
         """Log out the current user."""

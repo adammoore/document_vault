@@ -225,6 +225,28 @@ This MVP implements a simple document vault with a time-based messaging system. 
 2. More comprehensive testing is needed, especially for edge cases and error scenarios.
 3. The current UI is basic and needs improvement for better user experience.
 
+
+Document Vault Project Updates
+
+1. Resolved circular import issue:
+   - Refactored app/__init__.py to separate the scheduler initialization.
+   - Created a new function `init_scheduler` to handle scheduler setup.
+   - Removed circular import in app/tasks.py.
+
+2. Updated test configuration:
+   - Modified tests/conftest.py to properly handle the scheduler initialization.
+   - Changed the app fixture scope to 'session' for better performance.
+
+3. Updated run.py:
+   - Added scheduler initialization to the run script.
+
+These changes should resolve the unit test issues and allow the project to move forward to the prototype stage. The main problem was a circular import between app/__init__.py and app/tasks.py, which has been resolved by restructuring the initialization process.
+
+Next steps:
+1. Run the tests again to ensure they pass.
+2. If any issues persist, review and update the individual test files as needed.
+3. Once tests are passing, proceed with further development and refinement of the Document Vault features.
+
 Author: Adam Vials Moore
 Last Updated: September 10, 2024
 License: Apache 2.0
