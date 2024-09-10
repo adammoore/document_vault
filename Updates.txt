@@ -297,6 +297,26 @@ Document Vault Project Updates
    - If any tests are still failing, investigate and fix each failing test individually.
    - Once all tests are passing, proceed with further development and refinement of the Document Vault features.
 
+Document Vault Project Updates
+
+1. Fixed unit test issues:
+   - Updated MockOAuthClient in tests/conftest.py
+   - Modified create_user test to use a unique email
+
+2. Added test email functionality:
+   - Created a new route in config.py to send test emails using current configuration
+
+3. Improved UX/UI:
+   - Updated base.html template with a cleaner, more intuitive layout
+   - Added custom CSS for better presentation and accessibility
+   - Implemented dark mode support for high contrast
+
+4. Next steps:
+   - Run the tests again to verify that all issues have been resolved
+   - Test the new email functionality
+   - Review the updated UI and gather feedback from users
+   - Continue refining and expanding the application's features
+
 Author: Adam Vials Moore
 Last Updated: September 10, 2024
 License: Apache 2.0

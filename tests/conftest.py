@@ -4,10 +4,15 @@ from app.models import User
 from config import TestConfig
 
 
+class MockOAuthClient:
+    def prepare_request_uri(self, *args, **kwargs):
+        return "https://accounts.google.com/o/oauth2/v2/auth?mock-auth-url"
+
+
 @pytest.fixture(scope='session')
 def app():
-    """Create and configure a new app instance for each test session."""
     _app = create_app(TestConfig)
+    _app.oauth_client = MockOAuthClient()
 
     with _app.app_context():
         db.create_all()
