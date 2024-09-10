@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Document Vault</h1>
+    <p class="lead">A secure document storage system with time-based messaging functionality.</p>
+    <hr class="my-4">
+    <p>Please log in to access your documents and manage your account.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('auth.login') }}" role="button">Log In with Google</a>
+</div>
+{% endblock %}

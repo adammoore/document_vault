@@ -92,5 +92,139 @@ This MVP implements a simple document vault with a time-based messaging system. 
 - Implementing proper error handling for email sending failures
 - Developing a more user-friendly interface for document management
 
+## Document Vault Project - Major Update
+
+### Changes and Additions
+
+1. Implemented Google OAuth for user authentication
+2. Added document management functionality (CRUD operations)
+3. Implemented recipient management
+4. Set up Celery for background tasks (document expiry checks)
+5. Added email functionality for password reset
+6. Improved project structure and organization
+7. Added configuration management
+8. Implemented basic UI using Bootstrap
+9. Added unit tests
+10. Created setup scripts and documentation
+
+### Next Steps
+
+1. Implement more comprehensive error handling
+2. Add more unit and integration tests
+3. Improve UI/UX design
+4. Implement advanced search functionality for documents
+5. Add document versioning
+6. Implement document sharing functionality
+7. Add user roles and permissions
+8. Implement audit logging
+9. Optimize database queries for better performance
+10. Set up continuous integration and deployment (CI/CD) pipeline
+
+### Known Issues
+
+1. Celery worker may not start correctly due to import issues (being addressed)
+2. Some unit tests are failing and need to be updated
+3. UI needs further refinement for better user experience
+4. Error handling needs improvement in some areas
+
+
+## Document Vault Project - Major Update (September 10, 2024)
+
+### Changes and Additions
+
+1. Implemented Google OAuth for user authentication
+   - Added OAuth client initialization in app/__init__.py
+   - Created login and callback routes in app/routes/auth.py
+   - Enabled insecure transport for development purposes (to be removed in production)
+
+2. Updated main routes to handle authenticated and unauthenticated users
+   - Modified app/routes/main.py to show different views based on authentication status
+
+3. Created new HTML templates
+   - Added landing.html for unauthenticated users
+   - Added dashboard.html for authenticated users
+
+4. Updated base.html template to include proper navigation and logout option
+
+5. Fixed InsecureTransportError in OAuth process for development
+
+6. Improved error handling in OAuth callback function
+
+### Next Steps
+
+1. Implement document management functionality (CRUD operations)
+2. Set up email functionality for notifications
+3. Implement more comprehensive error handling and logging
+4. Add more unit and integration tests
+5. Prepare the application for production deployment (ensure HTTPS is used)
+6. Implement user roles and permissions
+7. Add document versioning and sharing functionality
+
+### Known Issues
+
+1. The application is currently using insecure transport (HTTP) for OAuth. This must be changed to HTTPS for production use.
+2. More comprehensive testing is needed, especially for the authentication flow and document management.
+
+
+## Document Vault Project - Major Update (September 10, 2024)
+
+### Changes and Additions
+
+1. Implemented Google OAuth for user authentication
+   - Added OAuth client initialization in app/__init__.py
+   - Created login and callback routes in app/routes/auth.py
+   - Enabled insecure transport for development purposes (to be removed in production)
+
+2. Updated main routes to handle authenticated and unauthenticated users
+   - Modified app/routes/main.py to show different views based on authentication status
+
+3. Created new HTML templates
+   - Added landing.html for unauthenticated users
+   - Added dashboard.html for authenticated users
+
+4. Updated base.html template to include proper navigation and logout option
+
+5. Fixed InsecureTransportError in OAuth process for development
+
+6. Improved error handling in OAuth callback function
+
+7. Implemented document management functionality (CRUD operations)
+   - Added routes for listing, adding, editing, and deleting documents
+   - Created corresponding HTML templates for document management
+
+8. Implemented recipient management functionality
+   - Added routes for listing, adding, editing, and deleting recipients
+   - Created corresponding HTML templates for recipient management
+
+9. Set up APScheduler for background tasks
+   - Implemented check_document_expiry task
+
+10. Updated testing configuration
+    - Created TestConfig class
+    - Implemented mock OAuth client for testing
+    - Updated conftest.py to use in-memory SQLite database for tests
+
+11. Fixed various bugs and import issues
+
+### Next Steps
+
+1. Implement more comprehensive error handling and logging
+2. Improve UI/UX design
+3. Implement advanced search functionality for documents
+4. Add document versioning
+5. Implement document sharing functionality
+6. Add user roles and permissions
+7. Implement audit logging
+8. Optimize database queries for better performance
+9. Set up continuous integration and deployment (CI/CD) pipeline
+10. Implement email notifications for document expiry
+
+### Known Issues
+
+1. The application is currently using insecure transport (HTTP) for OAuth. This must be changed to HTTPS for production use.
+2. More comprehensive testing is needed, especially for edge cases and error scenarios.
+3. The current UI is basic and needs improvement for better user experience.
+
 Author: Adam Vials Moore
+Last Updated: September 10, 2024
 License: Apache 2.0
