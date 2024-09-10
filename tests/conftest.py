@@ -12,6 +12,7 @@ from app import create_app, db, init_scheduler
 from app.models import User
 from config import TestConfig
 
+
 @pytest.fixture(scope='session')
 def app():
     """Create and configure a new app instance for each test session."""
@@ -34,6 +35,9 @@ def runner(app):
     """A test runner for the app's Click commands."""
     return app.test_cli_runner()
 
+class MockOAuthClient:
+    def prepare_request_uri(self, *args, **kwargs):
+        return "https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=mock-client-id&redirect_uri=mock-redirect-uri"
 class AuthActions:
     """Helper class for authentication actions in tests."""
 
@@ -42,10 +46,13 @@ class AuthActions:
 
     def login(self, email='test@example.com', name='Test User'):
         """Log in as a test user."""
-        user = User(email=email, name=name)
-        db.session.add(user)
-        db.session.commit()
-        return self._client.get('/login')  # This needs to be adjusted for Google OAuth
+        with app.app_context():
+            user = User.query.filter_by(email=email).first()
+            if not user:
+                user = User(email=email, name=name)
+                db.session.add(user)
+                db.session.commit()
+        return self._client.get('/login')
 
     def logout(self):
         """Log out the current user."""
@@ -55,3 +62,17 @@ class AuthActions:
 def auth(client):
     """Authentication actions for tests."""
     return AuthActions(client)
+
+@pytest.fixture(autouse=True)
+def db_session(app):
+    """Create a new database session for a test."""
+    with app.app_context():
+        connection = db.engine.connect()
+        transaction = connection.begin()
+        options = dict(bind=connection, binds={})
+        session = db.create_scoped_session(options=options)
+        db.session = session
+        yield session
+        transaction.rollback()
+        connection.close()
+        session.remove()

@@ -247,6 +247,21 @@ Next steps:
 2. If any issues persist, review and update the individual test files as needed.
 3. Once tests are passing, proceed with further development and refinement of the Document Vault features.
 
+Document Vault Project Updates
+
+1. Resolved circular import issue (previous update)
+
+2. Fixed test suite issues:
+   - Updated MockOAuthClient to return a more realistic Google OAuth URL.
+   - Modified AuthActions to prevent duplicate user creation in tests.
+   - Added a db_session fixture to properly handle database sessions and rollbacks in tests.
+   - Ensured that TestConfig is used in the app fixture for tests.
+
+3. Next steps:
+   - Run the tests again to verify that all issues have been resolved.
+   - If any tests are still failing, investigate and fix each failing test individually.
+   - Once all tests are passing, proceed with further development and refinement of the Document Vault features.
+
 Author: Adam Vials Moore
 Last Updated: September 10, 2024
 License: Apache 2.0
