@@ -317,6 +317,36 @@ Document Vault Project Updates
    - Review the updated UI and gather feedback from users
    - Continue refining and expanding the application's features
 
+Document Vault Project Updates
+
+1. Fixed LegacyAPIWarning:
+   - Updated all instances of Model.query.get() to db.session.get(Model, id)
+   - Modified auth.py, test_documents.py, and test_recipients.py
+
+2. Fixed failing test_create_user:
+   - Added missing import for 'db' in test_auth.py
+   - Updated the test to use db.session.get() instead of querying
+
+3. Next steps:
+   - Run the tests again to verify that all warnings and errors have been resolved
+   - Continue with any remaining feature development or refinements
+   - Consider updating the application to fully support SQLAlchemy 2.0 syntax
+
+
+1. Addressed LegacyAPIWarning:
+   - Updated models.py to use SQLAlchemy 2.0 style relationships
+   - Modified __init__.py to ensure proper initialization of SQLAlchemy
+   - Updated auth.py to use db.session.get() instead of User.query.get()
+
+2. Ensured all parts of the application are using SQLAlchemy 2.0 compatible syntax
+
+3. Next steps:
+   - Run the tests again to verify that all warnings have been resolved
+   - Review the entire codebase for any remaining uses of deprecated SQLAlchemy methods
+   - Continue with any remaining feature development or refinements
+   - Consider updating Flask-SQLAlchemy to the latest version if not already done
+
+
 Author: Adam Vials Moore
-Last Updated: September 10, 2024
+Last Updated: September 11, 2024
 License: Apache 2.0
