@@ -346,6 +346,31 @@ Document Vault Project Updates
    - Continue with any remaining feature development or refinements
    - Consider updating Flask-SQLAlchemy to the latest version if not already done
 
+Document Vault Project Updates
+
+1. Fixed issue with files not being available after logout and login:
+   - Updated User model to include relationship with documents
+   - Modified login process to use remember=True for persistent sessions
+
+2. Added recent activity stream to the dashboard:
+   - Updated main route to fetch recent documents
+   - Modified dashboard template to display recent activity
+
+3. Improved configuration screen to allow sending test emails without saving:
+   - Updated config route to handle test email requests
+   - Modified config template to include a separate button for test emails
+
+4. Added CLI commands for testing scheduler and document countdown:
+   - Created new cli.py file with custom commands
+   - Updated __init__.py to include new CLI commands
+
+5. Next steps:
+   - Test the new features thoroughly
+   - Update user documentation to reflect new functionality
+   - Consider adding more robust error handling and logging
+   - Plan for future enhancements based on user feedback
+
+
 
 Author: Adam Vials Moore
 Last Updated: September 11, 2024

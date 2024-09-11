@@ -1,21 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome, {{ current_user.name }}!</h1>
-<p>This is your document vault dashboard.</p>
-<div class="row">
-    <div class="col-md-6">
-        <h2>Quick Links</h2>
-        <ul>
-            <li><a href="{{ url_for('documents.list_documents') }}">Manage Documents</a></li>
-            <li><a href="{{ url_for('recipients.list_recipients') }}">Manage Recipients</a></li>
-            <li><a href="{{ url_for('config.config') }}">Configuration</a></li>
-        </ul>
+    <h1>Welcome to Document Vault</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="{{ url_for('documents.list_documents') }}">Manage Documents</a></li>
+                <li><a href="{{ url_for('recipients.list_recipients') }}">Manage Recipients</a></li>
+                <li><a href="{{ url_for('config.config') }}">Configuration</a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h2>Recent Activity</h2>
+            {% if recent_documents %}
+                <ul>
+                    {% for document in recent_documents %}
+                        <li>{{ document.title }} ({{ document.updated_at.strftime('%Y-%m-%d %H:%M') }})</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No recent activity.</p>
+            {% endif %}
+        </div>
     </div>
-    <div class="col-md-6">
-        <h2>Recent Activity</h2>
-        <!-- Add recent activity content here -->
-        <p>No recent activity to display.</p>
-    </div>
-</div>
 {% endblock %}
