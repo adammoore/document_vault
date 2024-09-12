@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
@@ -13,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -37,6 +42,9 @@
     "accountId": "12b73301-336e-477c-a62f-487aa54b1a14"
   }
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
 }]]></component>
@@ -49,8 +57,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.document_vault.executor": "Run",
+    "Python.run.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/adamvialsmoore/PycharmProjects/document-vault/app/templates",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   },
   "keyToStringList": {
     "GitStage.ChangesTree.GroupingKeys": [
@@ -60,6 +73,14 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -100,15 +121,132 @@
       <option name="project" value="LOCAL" />
       <updated>1725896961439</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New Features and Changes&#10;&#10;Implemented email link functionality for resetting the countdown timer&#10;Created a setup script for initializing the project structure&#10;Added instructions for setting up the GitHub project&#10;&#10;Implementation Details&#10;&#10;Modified the DocumentVault class to include a reset token&#10;Added a new Flask route /reset/&lt;token&gt; to handle timer resets via email link&#10;Updated the send_message method to include the reset link in the email&#10;Created a shell script setup_project.sh to set up the project structure">
+      <option name="closed" value="true" />
+      <created>1725897571330</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725897571330</updated>
+    </task>
+    <task id="LOCAL-00005" summary="New Features and Changes&#10;&#10;Implemented email link functionality for resetting the countdown timer&#10;Created a setup script for initializing the project structure&#10;Added instructions for setting up the GitHub project&#10;&#10;Implementation Details&#10;&#10;Modified the DocumentVault class to include a reset token&#10;Added a new Flask route /reset/&lt;token&gt; to handle timer resets via email link&#10;Updated the send_message method to include the reset link in the email&#10;Created a shell script setup_project.sh to set up the project structure">
+      <option name="closed" value="true" />
+      <created>1725897663690</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1725897663690</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update requirements.txt">
+      <option name="closed" value="true" />
+      <created>1725898602622</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725898602622</updated>
+    </task>
+    <task id="LOCAL-00007" summary="git commit -m &quot;Add root route and simple homepage&quot;">
+      <option name="closed" value="true" />
+      <created>1725899102887</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725899102887</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Implement Google OAuth authentication and update main routes&#10;&#10;- Add OAuth client initialization in app/__init__.py&#10;- Create login and callback routes in app/routes/auth.py&#10;- Enable insecure transport for development (to be removed in production)&#10;- Update main routes to handle authenticated and unauthenticated users&#10;- Create new templates: landing.html and dashboard.html&#10;- Update base.html with proper navigation&#10;- Fix InsecureTransportError for development&#10;- Improve error handling in OAuth callback&#10;- Update Updates.txt with recent changes">
+      <option name="closed" value="true" />
+      <created>1725968364962</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1725968364962</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Major update: Implement OAuth, document and recipient management, and testing infrastructure&#10;&#10;- Add Google OAuth authentication&#10;- Implement CRUD operations for documents and recipients&#10;- Set up APScheduler for background tasks&#10;- Update testing configuration with mock OAuth client&#10;- Fix various bugs and import issues&#10;- Update templates and routing for authenticated/unauthenticated users">
+      <option name="closed" value="true" />
+      <created>1726006314784</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1726006314784</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix test suite issues and improve test configuration&#10;&#10;- Updated MockOAuthClient for more realistic OAuth URL&#10;- Modified AuthActions to prevent duplicate user creation&#10;- Added db_session fixture for proper database handling in tests&#10;- Ensured TestConfig is used in app fixture&#10;- Updated Updates.txt with latest changes and next steps">
+      <option name="closed" value="true" />
+      <created>1726009225021</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1726009225021</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fix test suite issues and improve test configuration&#10;&#10;- Updated MockOAuthClient for more realistic OAuth URL&#10;- Modified AuthActions to prevent duplicate user creation&#10;- Added db_session fixture for proper database handling in tests&#10;- Ensured TestConfig is used in app fixture&#10;- Updated Updates.txt with latest changes and next steps">
+      <option name="closed" value="true" />
+      <created>1726009570839</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1726009570839</updated>
+    </task>
+    <task id="LOCAL-00012" summary="ix Document model and update test configuration&#10;&#10;- Added 'recipient' relationship to Document model&#10;- Updated test configuration to properly handle app fixture&#10;- Modified AuthActions to use app_context correctly&#10;- Updated Updates.txt with latest changes and next steps">
+      <option name="closed" value="true" />
+      <created>1726011931780</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1726011931780</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix unit tests, add test email functionality, and improve UI/UX&#10;&#10;- Updated MockOAuthClient and fixed create_user test&#10;- Added route for sending test emails&#10;- Improved overall look and feel with updated HTML and custom CSS&#10;- Implemented dark mode and accessibility improvements&#10;- Updated Updates.txt with latest changes and next steps">
+      <option name="closed" value="true" />
+      <created>1726012449447</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1726012449447</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Address LegacyAPIWarning and update to SQLAlchemy 2.0 compatible syntax&#10;&#10;- Updated models to use SQLAlchemy 2.0 style relationships&#10;- Modified application initialization for proper SQLAlchemy setup&#10;- Updated auth routes to use db.session.get() instead of User.query.get()&#10;- Updated Updates.txt with latest changes and next steps">
+      <option name="closed" value="true" />
+      <created>1726068508989</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1726068508989</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Implement various improvements and new features&#10;&#10;- Fixed file availability issue after logout/login&#10;- Added recent activity stream to dashboard&#10;- Improved configuration screen with test email feature&#10;- Added CLI commands for testing scheduler and document countdown&#10;- Updated Updates.txt with latest changes and next steps">
+      <option name="closed" value="true" />
+      <created>1726069283411</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1726069283411</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement MVP for Document Vault with time-based messaging&#10;&#10;- Create DocumentVault class with core functionality&#10;- Implement Flask web server for API endpoints&#10;- Add countdown timer and message sending logic&#10;- Create Updates.txt with implementation details and next steps&quot;" />
     <MESSAGE value="Update requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update requirements.txt" />
+    <MESSAGE value="New Features and Changes&#10;&#10;Implemented email link functionality for resetting the countdown timer&#10;Created a setup script for initializing the project structure&#10;Added instructions for setting up the GitHub project&#10;&#10;Implementation Details&#10;&#10;Modified the DocumentVault class to include a reset token&#10;Added a new Flask route /reset/&lt;token&gt; to handle timer resets via email link&#10;Updated the send_message method to include the reset link in the email&#10;Created a shell script setup_project.sh to set up the project structure" />
+    <MESSAGE value="update requirements.txt" />
+    <MESSAGE value="git commit -m &quot;Add root route and simple homepage&quot;" />
+    <MESSAGE value="Implement Google OAuth authentication and update main routes&#10;&#10;- Add OAuth client initialization in app/__init__.py&#10;- Create login and callback routes in app/routes/auth.py&#10;- Enable insecure transport for development (to be removed in production)&#10;- Update main routes to handle authenticated and unauthenticated users&#10;- Create new templates: landing.html and dashboard.html&#10;- Update base.html with proper navigation&#10;- Fix InsecureTransportError for development&#10;- Improve error handling in OAuth callback&#10;- Update Updates.txt with recent changes" />
+    <MESSAGE value="Major update: Implement OAuth, document and recipient management, and testing infrastructure&#10;&#10;- Add Google OAuth authentication&#10;- Implement CRUD operations for documents and recipients&#10;- Set up APScheduler for background tasks&#10;- Update testing configuration with mock OAuth client&#10;- Fix various bugs and import issues&#10;- Update templates and routing for authenticated/unauthenticated users" />
+    <MESSAGE value="Fix test suite issues and improve test configuration&#10;&#10;- Updated MockOAuthClient for more realistic OAuth URL&#10;- Modified AuthActions to prevent duplicate user creation&#10;- Added db_session fixture for proper database handling in tests&#10;- Ensured TestConfig is used in app fixture&#10;- Updated Updates.txt with latest changes and next steps" />
+    <MESSAGE value="ix Document model and update test configuration&#10;&#10;- Added 'recipient' relationship to Document model&#10;- Updated test configuration to properly handle app fixture&#10;- Modified AuthActions to use app_context correctly&#10;- Updated Updates.txt with latest changes and next steps" />
+    <MESSAGE value="Fix unit tests, add test email functionality, and improve UI/UX&#10;&#10;- Updated MockOAuthClient and fixed create_user test&#10;- Added route for sending test emails&#10;- Improved overall look and feel with updated HTML and custom CSS&#10;- Implemented dark mode and accessibility improvements&#10;- Updated Updates.txt with latest changes and next steps" />
+    <MESSAGE value="Address LegacyAPIWarning and update to SQLAlchemy 2.0 compatible syntax&#10;&#10;- Updated models to use SQLAlchemy 2.0 style relationships&#10;- Modified application initialization for proper SQLAlchemy setup&#10;- Updated auth routes to use db.session.get() instead of User.query.get()&#10;- Updated Updates.txt with latest changes and next steps" />
+    <MESSAGE value="Implement various improvements and new features&#10;&#10;- Fixed file availability issue after logout/login&#10;- Added recent activity stream to dashboard&#10;- Improved configuration screen with test email feature&#10;- Added CLI commands for testing scheduler and document countdown&#10;- Updated Updates.txt with latest changes and next steps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement various improvements and new features&#10;&#10;- Fixed file availability issue after logout/login&#10;- Added recent activity stream to dashboard&#10;- Improved configuration screen with test email feature&#10;- Added CLI commands for testing scheduler and document countdown&#10;- Updated Updates.txt with latest changes and next steps" />
   </component>
 </project>
