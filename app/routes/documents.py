@@ -25,7 +25,13 @@ def allowed_file(filename):
 @bp.route('/documents')
 @login_required
 def list_documents():
-    documents = Document.query.filter_by(user_id=current_user.id).options(db.joinedload(Document.recipient)).all()
+    page = request.args.get('page', 1, type=int)
+    per_page = 10  # Number of documents per page
+    documents = Document.query.filter_by(user_id=current_user.id) \
+        .options(joinedload(Document.recipient)) \
+        .order_by(Document.updated_at.desc()) \
+        .paginate(page=page, per_page=per_page, error_out=False)
+
     return render_template('documents.html', documents=documents)
 
 
